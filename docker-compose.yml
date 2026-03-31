@@ -2,12 +2,10 @@ version: "3.9"
 
 services:
   react-app:
-    container_name: react_app
+    container_name: estudoorganizado-frontend
     build: .
     ports:
-      - "3000:3000"
-    volumes:
-      - ./frontend:/app
-      - /app/node_modules
+      - "5173:5173"
     stdin_open: true
     tty: true
+    command: npm run dev -- --host 0.0.0.0
