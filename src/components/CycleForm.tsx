@@ -176,7 +176,7 @@ export function CycleForm(props: CycleFormProps) {
                         </Form.Item>
 
 
-                        {disciplines.map((disciplina, i) => {
+                        {disciplines.map((disciplina) => {
                             const optionsTopic = listaMapaEstudos
                                 .filter(d => d.id == disciplina.id).reduce((acc, cur) => {
                                     const listaTopicosRestantes = cur.topics.filter(t => !disciplina.topics.some(dt => dt.id === t.id));
