@@ -1,4 +1,4 @@
-import { Card, Modal } from 'antd'
+import { Card } from 'antd'
 import { Grid } from '../components/Grid'
 import { PageButton } from '../components/PageButton'
 import { Row } from '../components/Row'

@@ -3,12 +3,6 @@ import { Grid } from '../components/Grid'
 import { Row } from '../components/Row'
 
 
-interface IHitoryCycle {
-    "description": string,
-    "information": string,
-    "annotation": string | null
-}
-
 interface ITopicMap {
     "id": number,
     "order": number,
