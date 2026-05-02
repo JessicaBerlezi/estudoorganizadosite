@@ -10,7 +10,7 @@ interface StudyCycleResponse {
 }
 // Buscar lista
 export async function getStudyCycle(): Promise<StudyCycleResponse> {
-    const response = await fetch(`${BASE_URL}/v1/study-cycle`);
+    const response = await fetch(`${BASE_URL}/study-cycle`);
 
     if (!response.ok) {
         throw new Error("Erro ao buscar mapa de estudos");
@@ -33,7 +33,7 @@ export async function createCycle(data: ICycle) {
 
     console.log(dadosMapeados);
 
-    const response = await fetch(`${BASE_URL}/v1/study-cycle/cycle`, {
+    const response = await fetch(`${BASE_URL}/study-cycle/cycle`, {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
@@ -56,7 +56,7 @@ export async function createStudyRecord(data: IStudyRecord) {
 
     console.log(dados);
 
-    const response = await fetch(`${BASE_URL}/v1/study-record?cycleId=${cycleId}&topicId=${topicId}`, {
+    const response = await fetch(`${BASE_URL}/study-record?cycleId=${cycleId}&topicId=${topicId}`, {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
@@ -80,7 +80,7 @@ export async function createReviewRecord(data: IReviewRecord) {
 
     console.log(dados);
 
-    const response = await fetch(`${BASE_URL}/v1/review-record?topicId=${topicId}`, {
+    const response = await fetch(`${BASE_URL}/review-record?topicId=${topicId}`, {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
@@ -108,7 +108,7 @@ export async function updateCycle(data: ICycle) {
 
     console.log(dadosMapeados);
 
-    const response = await fetch(`${BASE_URL}/v1/study-cycle/cycle?cycleId=${id}`, {
+    const response = await fetch(`${BASE_URL}/study-cycle/cycle?cycleId=${id}`, {
         method: "PUT",
         headers: {
             "Content-Type": "application/json",
@@ -126,7 +126,7 @@ export async function updateCycle(data: ICycle) {
 // Deletar ciclo por ID
 export async function deleteCycle(id: number) {
     const response = await fetch(
-        `${BASE_URL}/v1/study-cycle/cycle?cycleId=${id}`,
+        `${BASE_URL}/study-cycle/cycle?cycleId=${id}`,
         {
             method: "DELETE",
         }

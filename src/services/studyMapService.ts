@@ -7,7 +7,7 @@ interface StudyCycleResponse {
 
 // Buscar lista
 export async function getStudyMap(): Promise<IDiscipline[]> {
-    const response = await fetch(`${BASE_URL}/v1/study-map`);
+    const response = await fetch(`${BASE_URL}/study-map`);
 
     if (!response.ok) {
         throw new Error("Erro ao buscar mapa de estudos");
@@ -23,7 +23,7 @@ export async function createDiscipline(data: IDiscipline) {
 
     console.log(data);
 
-    const response = await fetch(`${BASE_URL}/v1/study-map/subject`, {
+    const response = await fetch(`${BASE_URL}/study-map/subject`, {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
@@ -44,7 +44,7 @@ export async function updateDiscipline(data: IDiscipline) {
     const { id, ...dados } = data;
     console.log({id,dados});
 
-    const response = await fetch(`${BASE_URL}/v1/study-map/subject?subjectId=${id}`, {
+    const response = await fetch(`${BASE_URL}/study-map/subject?subjectId=${id}`, {
         method: "PUT",
         headers: {
             "Content-Type": "application/json",
@@ -62,7 +62,7 @@ export async function updateDiscipline(data: IDiscipline) {
 // Deletar disciplina por ID
 export async function deleteDiscipline(id: number) {
     const response = await fetch(
-        `${BASE_URL}/v1/study-map/subject?subjectId=${id}`,
+        `${BASE_URL}/study-map/subject?subjectId=${id}`,
         {
             method: "DELETE",
         }
